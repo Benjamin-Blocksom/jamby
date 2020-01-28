@@ -1,10 +1,4 @@
 // functions/index.js
-exports.handler = async (event, context) => {
-  return {
-    statusCode: 200;
-    body: JSON.stringify({
-      message: "Hello World",
-      event
-    })
-  }
-}
+require("dotenv").config()
+
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
